@@ -54,12 +54,14 @@ body {
   z-index: 9999;
   opacity: 1;
   animation: sparkleFloat 0.8s ease-out forwards;
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes sparkleFloat {
   to {
     opacity: 0;
-    transform: translateY(-50px) scale(0);
+    transform: translate3d(0, -50px, 0) scale(0);
   }
 }
 
@@ -77,6 +79,8 @@ body {
   visibility: hidden;
   transition: opacity 0.6s ease, visibility 0.6s ease;
   z-index: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .screen.active {

@@ -18,13 +18,13 @@ function App() {
 
     const handleMouseMove = (e) => {
       const now = Date.now();
-      if (now - lastSparkleTime > 100) {
+      if (now - lastSparkleTime > 150) {
         const newSparkle = {
           id: Date.now(),
           x: e.clientX,
           y: e.clientY
         };
-        setSparkles(prev => [...prev, newSparkle]);
+        setSparkles(prev => [...prev.slice(-10), newSparkle]); // Limit to last 10 sparkles
 
         // Remove sparkle after animation
         setTimeout(() => {

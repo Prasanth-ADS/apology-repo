@@ -40,12 +40,12 @@ const FallingHearts = () => {
         };
 
         // Create initial batch of hearts
-        for (let i = 0; i < 50; i++) {
-            setTimeout(() => createHeart(), i * 100);
+        for (let i = 0; i < 15; i++) {
+            setTimeout(() => createHeart(), i * 300);
         }
 
         // Continuously create new hearts
-        const interval = setInterval(createHeart, 400);
+        const interval = setInterval(createHeart, 800);
 
         return () => {
             clearInterval(interval);
