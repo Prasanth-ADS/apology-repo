@@ -29,11 +29,11 @@
 
     0%,
     100% {
-        transform: translateX(-30px) rotate(-10deg);
+        transform: rotate(-5deg);
     }
 
     50% {
-        transform: translateX(30px) rotate(10deg);
+        transform: rotate(5deg);
     }
 }
 

@@ -61,7 +61,7 @@ body {
 @keyframes sparkleFloat {
   to {
     opacity: 0;
-    transform: translate3d(0, -50px, 0) scale(0);
+    transform: scale(0);
   }
 }
 
@@ -222,7 +222,7 @@ body {
 }
 
 .btn-yes:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
 }
 
@@ -239,7 +239,7 @@ body {
 }
 
 .btn-continue:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 15px 40px rgba(233, 69, 96, 0.5);
 }
 

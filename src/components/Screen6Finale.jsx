@@ -4,13 +4,14 @@ import './Screen6Finale.css';
 const Screen6Finale = ({ active, onRestart }) => {
     const [isPlaying, setIsPlaying] = useState(false); // Initially false to handle autoplay policies
     const [showHugAnimation, setShowHugAnimation] = useState(false);
-    const audioRef = useRef(null);
-    const songUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; // Placeholder for demo, ideally a direct link to Perfect
+    const songUrl = '/ed-sheeran-perfect-official-music-video_9kqLJ4wV.mp3';
+    const audioRef = useRef(new Audio(songUrl));
+    // Placeholder for demo, ideally a direct link to Perfect
 
     useEffect(() => {
         let audio = null;
         if (active) {
-            audio = new Audio('https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Tours/Enthusiast/Tours_-_01_-_Enthusiast.mp3'); // Using a reliable free track for now
+            audio = new Audio(songUrl); // Using the local file
             audio.loop = true;
             audioRef.current = audio;
 

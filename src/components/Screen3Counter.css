@@ -146,7 +146,7 @@
 
     100% {
         opacity: 0;
-        transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(2) rotate(360deg);
+        transform: translate(-50%, -50%) scale(2) rotate(360deg);
     }
 }
 

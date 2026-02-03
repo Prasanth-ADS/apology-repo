@@ -26,7 +26,7 @@ const Screen2 = ({ active, onContinue }) => {
 
             setTimeout(() => {
                 heart.style.opacity = '1';
-                heart.style.transform = `translateY(-${Math.random() * 200 + 100}px) scale(1.5) rotate(${Math.random() * 360}deg)`;
+                heart.style.transform = `scale(1.2) rotate(${Math.random() * 360}deg)`;
             }, i * 100);
 
             setTimeout(() => {
