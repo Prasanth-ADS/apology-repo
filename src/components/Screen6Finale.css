@@ -93,6 +93,35 @@
     opacity: 0.8;
 }
 
+.player-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.play-toggle {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 182, 193, 0.3);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.play-toggle:hover {
+    background: rgba(255, 107, 157, 0.3);
+    border-color: #ff6b9d;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
+}
+
 .progress-bar {
     width: 100%;
     height: 8px;
@@ -107,7 +136,10 @@
     width: 0;
     background: linear-gradient(90deg, #ff6b9d, #ffa6c9);
     border-radius: 10px;
-    animation: progress 10s linear infinite;
+}
+
+.progress-fill.moving {
+    animation: progress 263s linear infinite; /* 263s is roughly the length of Perfect */
 }
 
 .time-display {

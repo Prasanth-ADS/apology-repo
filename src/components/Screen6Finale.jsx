@@ -1,15 +1,45 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Screen6Finale.css';
 
 const Screen6Finale = ({ active, onRestart }) => {
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false); // Initially false to handle autoplay policies
     const [showHugAnimation, setShowHugAnimation] = useState(false);
+    const audioRef = useRef(null);
+    const songUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; // Placeholder for demo, ideally a direct link to Perfect
 
     useEffect(() => {
+        let audio = null;
         if (active) {
-            setIsPlaying(true);
+            audio = new Audio('https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Tours/Enthusiast/Tours_-_01_-_Enthusiast.mp3'); // Using a reliable free track for now
+            audio.loop = true;
+            audioRef.current = audio;
+
+            // Try to play - might be blocked until user interaction
+            audio.play().then(() => {
+                setIsPlaying(true);
+            }).catch(err => {
+                console.log("Autoplay blocked, waiting for user interaction:", err);
+            });
         }
+
+        return () => {
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        };
     }, [active]);
+
+    const togglePlay = () => {
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
 
     const handleSendHug = () => {
         setShowHugAnimation(true);
@@ -66,16 +96,22 @@ const Screen6Finale = ({ active, onRestart }) => {
                                 </div>
 
                                 <div className="player-info">
-                                    <h2 className="song-title">Our Song</h2>
-                                    <p className="artist-name">A Romantic Melody</p>
+                                    <h2 className="song-title">Perfect</h2>
+                                    <p className="artist-name">Ed Sheeran</p>
+                                </div>
+
+                                <div className="player-controls">
+                                    <button className="play-toggle" onClick={togglePlay}>
+                                        {isPlaying ? '⏸️' : '▶️'}
+                                    </button>
                                 </div>
 
                                 <div className="progress-bar">
-                                    <div className="progress-fill"></div>
+                                    <div className={`progress-fill ${isPlaying ? 'moving' : ''}`}></div>
                                 </div>
 
                                 <div className="time-display">
-                                    <span>0:00</span>
+                                    <span>{isPlaying ? 'Playing...' : 'Paused'}</span>
                                     <span>∞</span>
                                 </div>
 
