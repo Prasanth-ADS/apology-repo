@@ -333,7 +333,7 @@
     }
 
     50% {
-        text-shadow: 0 0 40px rgba(255, 107, 157, 0.8);
+        text-shadow: 0 0 30px rgba(255, 107, 157, 0.6);
     }
 }
 
@@ -344,7 +344,7 @@
     }
 
     .question-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem;
     }
 
     .quiz-navigation {

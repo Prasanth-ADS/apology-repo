@@ -38,7 +38,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: glow 3s ease-in-out infinite;
+    animation: fadeIn 1s ease-out;
 }
 
 .letter-intro {

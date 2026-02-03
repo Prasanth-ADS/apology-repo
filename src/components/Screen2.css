@@ -69,12 +69,25 @@
 
 .card-shine {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    animation: shine 3s ease-in-out infinite;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+    animation: stableShine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes stableShine {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .card-title {
@@ -98,7 +111,19 @@
 }
 
 .heart-divider span {
-    animation: pulse 1s ease-in-out infinite;
+    animation: stablePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes stablePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .heart-divider span:nth-child(2) {
