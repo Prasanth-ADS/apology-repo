@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import Screen1 from './components/Screen1';
 import Screen2 from './components/Screen2';
-import Screen3 from './components/Screen3';
+import Screen3Counter from './components/Screen3Counter';
+import Screen4 from './components/Screen4';
+import Screen5Quiz from './components/Screen5Quiz';
+import Screen6Finale from './components/Screen6Finale';
 import FallingHearts from './components/FallingHearts';
 import './App.css';
 
@@ -40,6 +43,10 @@ function App() {
     setCurrentScreen(screenNumber);
   };
 
+  const restartExperience = () => {
+    setCurrentScreen(1);
+  };
+
   return (
     <div className="app">
       <FallingHearts />
@@ -56,10 +63,31 @@ function App() {
         />
       ))}
 
-      {/* Screens */}
-      <Screen1 active={currentScreen === 1} onYesClick={() => goToScreen(2)} />
-      <Screen2 active={currentScreen === 2} onContinue={() => goToScreen(3)} />
-      <Screen3 active={currentScreen === 3} />
+      {/* All 6 Screens */}
+      <Screen1
+        active={currentScreen === 1}
+        onYesClick={() => goToScreen(2)}
+      />
+      <Screen2
+        active={currentScreen === 2}
+        onContinue={() => goToScreen(3)}
+      />
+      <Screen3Counter
+        active={currentScreen === 3}
+        onContinue={() => goToScreen(4)}
+      />
+      <Screen4
+        active={currentScreen === 4}
+        onContinue={() => goToScreen(5)}
+      />
+      <Screen5Quiz
+        active={currentScreen === 5}
+        onContinue={() => goToScreen(6)}
+      />
+      <Screen6Finale
+        active={currentScreen === 6}
+        onRestart={restartExperience}
+      />
     </div>
   );
 }

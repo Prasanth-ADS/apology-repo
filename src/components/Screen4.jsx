@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import ReasonCard from './ReasonCard';
-import './Screen3.css';
+import './Screen4.css';
 
 const reasons = [
     {
@@ -55,7 +55,7 @@ const reasons = [
     }
 ];
 
-const Screen3 = ({ active }) => {
+const Screen4 = ({ active, onContinue }) => {
     const cardRefs = useRef([]);
 
     useEffect(() => {
@@ -81,7 +81,7 @@ const Screen3 = ({ active }) => {
     }, [active]);
 
     return (
-        <div className={`screen screen3-container ${active ? 'active' : ''}`}>
+        <div className={`screen screen4-container ${active ? 'active' : ''}`}>
             <div className="content-wrapper scroll-container">
                 <div className="letter-container">
                     <h1 className="letter-title">10 Reasons Why I Love You</h1>
@@ -108,6 +108,10 @@ const Screen3 = ({ active }) => {
                     <div className="letter-footer">
                         <p className="footer-text">Forever yours,</p>
                         <p className="signature">With all my love ❤️</p>
+                        <button className="btn btn-continue" onClick={onContinue}>
+                            Continue to Quiz
+                            <span className="arrow">→</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -115,4 +119,4 @@ const Screen3 = ({ active }) => {
     );
 };
 
-export default Screen3;
+export default Screen4;

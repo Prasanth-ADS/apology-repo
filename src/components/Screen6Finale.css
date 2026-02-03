@@ -1,0 +1,447 @@
+.finale-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0014 0%, #1a0a2e 50%, #2d1b4e 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    overflow: hidden;
+}
+
+.finale-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.finale-container {
+    max-width: 900px;
+    width: 90%;
+    padding: 2rem;
+}
+
+/* Music Player */
+.music-player {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    border: 2px solid rgba(255, 182, 193, 0.2);
+    margin-bottom: 3rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.8s ease;
+}
+
+.player-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.4);
+}
+
+.album-gradient {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d, #c06c84, #f67280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 20s linear infinite;
+}
+
+.album-heart {
+    font-size: 5rem;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+.vinyl-disc {
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.8) 32%, transparent 32%);
+    animation: spin 3s linear infinite;
+}
+
+.player-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.song-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b9d, #ffa6c9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.artist-name {
+    font-size: 1.3rem;
+    color: #ffa6c9;
+    opacity: 0.8;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #ff6b9d, #ffa6c9);
+    border-radius: 10px;
+    animation: progress 10s linear infinite;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    color: #ffa6c9;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.equalizer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.5rem;
+    height: 60px;
+}
+
+.bar {
+    width: 10px;
+    background: linear-gradient(180deg, #ff6b9d, #c06c84);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.bar.playing {
+    animation: equalize 0.8s ease-in-out infinite;
+}
+
+.bar-1 {
+    animation-delay: 0s;
+}
+
+.bar-2 {
+    animation-delay: 0.1s;
+}
+
+.bar-3 {
+    animation-delay: 0.2s;
+}
+
+.bar-4 {
+    animation-delay: 0.15s;
+}
+
+.bar-5 {
+    animation-delay: 0.05s;
+}
+
+/* Final Message */
+.final-message {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 3rem;
+    border: 2px solid rgba(255, 182, 193, 0.2);
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: fadeInUp 1s ease 0.3s backwards;
+}
+
+.message-hearts {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.message-hearts span {
+    animation: float 3s ease-in-out infinite;
+}
+
+.message-hearts span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.message-hearts span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.message-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b9d, #ffa6c9, #ff8fab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+}
+
+.message-text {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: #fff;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Action Buttons */
+.finale-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease 0.6s backwards;
+}
+
+.action-btn {
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    border: 2px solid;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.action-btn:hover::before {
+    width: 400px;
+    height: 400px;
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+.btn-restart {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 182, 193, 0.4);
+    color: #fff;
+}
+
+.btn-restart::before {
+    background: rgba(255, 182, 193, 0.2);
+}
+
+.btn-restart:hover {
+    border-color: #ffa6c9;
+    box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-hug {
+    background: linear-gradient(135deg, #ff6b9d, #c06c84);
+    border-color: #ff6b9d;
+    color: #fff;
+}
+
+.btn-hug::before {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-hug:hover {
+    box-shadow: 0 10px 50px rgba(255, 107, 157, 0.6);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Hug Animation */
+.hug-animation {
+    text-align: center;
+    animation: scaleIn 0.5s ease;
+}
+
+.hug-emoji {
+    font-size: 10rem;
+    animation: hugPulse 1s ease-in-out infinite;
+    margin-bottom: 2rem;
+}
+
+.hug-text {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b9d, #ffa6c9, #ff8fab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: -50px;
+    animation: fall 3s linear forwards;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes equalize {
+
+    0%,
+    100% {
+        height: 20px;
+    }
+
+    50% {
+        height: 60px;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hugPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .music-player {
+        padding: 2rem 1.5rem;
+    }
+
+    .album-art {
+        width: 150px;
+        height: 150px;
+    }
+
+    .album-heart {
+        font-size: 3.5rem;
+    }
+
+    .finale-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,24 +1,24 @@
-.screen3-container .scroll-container {
+.screen4-container .scroll-container {
     max-height: 100vh;
     overflow-y: auto;
     padding-right: var(--spacing-sm);
 }
 
-.screen3-container .scroll-container::-webkit-scrollbar {
+.screen4-container .scroll-container::-webkit-scrollbar {
     width: 8px;
 }
 
-.screen3-container .scroll-container::-webkit-scrollbar-track {
+.screen4-container .scroll-container::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 
-.screen3-container .scroll-container::-webkit-scrollbar-thumb {
+.screen4-container .scroll-container::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, var(--pink-medium) 0%, var(--purple-light) 100%);
     border-radius: 10px;
 }
 
-.screen3-container .scroll-container::-webkit-scrollbar-thumb:hover {
+.screen4-container .scroll-container::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
