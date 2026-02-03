@@ -1,0 +1,64 @@
+.apology-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.main-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--white) 0%, var(--pink-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.apology-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+.question {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-lg);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.button-container {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+    position: relative;
+    min-height: 70px;
+}
+
+.sparkle {
+    display: inline-block;
+    margin-left: var(--spacing-xs);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .apology-box {
+        padding: var(--spacing-md);
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

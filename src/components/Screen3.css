@@ -1,0 +1,91 @@
+.screen3-container .scroll-container {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+.screen3-container .scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.screen3-container .scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.screen3-container .scroll-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--pink-medium) 0%, var(--purple-light) 100%);
+    border-radius: 10px;
+}
+
+.screen3-container .scroll-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+.letter-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.letter-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, var(--white) 0%, var(--pink-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.letter-intro {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-light);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.letter-footer {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-text {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    font-style: italic;
+}
+
+.signature {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}
