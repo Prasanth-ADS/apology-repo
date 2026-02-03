@@ -1,0 +1,144 @@
+.screen2-container {
+    position: relative;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.animated-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.animated-hearts .heart {
+    position: absolute;
+    font-size: 3rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.heart-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.3s;
+}
+
+.heart-3 {
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 0.6s;
+}
+
+.heart-4 {
+    bottom: 25%;
+    right: 10%;
+    animation-delay: 0.9s;
+}
+
+.heart-5 {
+    top: 50%;
+    left: 5%;
+    animation-delay: 1.2s;
+}
+
+.romantic-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px);
+    border-radius: 40px;
+    padding: var(--spacing-xl);
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 3s ease-in-out infinite;
+}
+
+.card-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--white) 50%, var(--purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.heart-divider {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+    font-size: 2rem;
+}
+
+.heart-divider span {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.heart-divider span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.heart-divider span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.card-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-message {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 300;
+}
+
+.burst-heart {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+@media (max-width: 768px) {
+    .romantic-card {
+        padding: var(--spacing-md);
+    }
+
+    .animated-hearts .heart {
+        font-size: 2rem;
+    }
+}
